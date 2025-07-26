@@ -1,0 +1,81 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    // If the user is not logged in, redirect them to the login page
+    header("Location: login.php");
+    exit();
+}
+$firstname = $_SESSION['FirstName'];
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="homestyle.css">
+	<title>Note-Planner</title>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		img
+		{
+			border-radius: 200px;
+			width: 410px;
+		}
+		h1
+		{
+			font-family:"arial","sans-serif;";
+			font-size: 60pt;
+			
+		}
+	</style>
+</head>
+<body bgcolor="lavender" style="padding-right: 50px;padding-left: 100px;">
+	<header>
+	<div class="navbar">
+	<a href="#" class="logo">Note Planner</a>
+	<ul class="nav">
+			<li><a href="home.php">Home</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="SignUp.html">SignUp</a></li>
+			<li><a href="login.html">Login</a></li>
+		</ul>
+	</div>
+	</header>
+	<br><br><br><br><br><br><br><br>
+	<h1>Hi <?php </h1>
+<img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&fit=clip" border="0.5" width="400px" height="400px" align="right">
+<h2>Note<br>Planner</h2>
+	<br>
+	<p>Create a virtual shelf and organize your notes today!!</p>
+<div class="banner-area" id="home">
+</div>
+<div class="service-area" id="service">
+	<div class="text-part">
+	<h1>Services</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div class="about-area" id="about">
+	<div class="text-part">
+		<h1>About Us</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+
+</body>
+</html>

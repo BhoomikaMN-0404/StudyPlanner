@@ -1,0 +1,51 @@
+window.onload = function() {
+  var timerDisplay = document.getElementById("timer");
+  var startButton = document.getElementById("startBtn");
+  var resetButton = document.getElementById("resetBtn");
+
+  var timer;
+  var minutes = 25;
+  var seconds = 0;
+  var isRunning = false;
+
+  function updateTimer() {
+    timerDisplay.textContent = padZero(minutes) + ":" + padZero(seconds);
+  }
+
+  function padZero(value) {
+    return value < 10 ? "0" + value : value;
+  }
+
+  function startTimer() {
+    if (!isRunning) {
+      timer = setInterval(function() {
+        if (seconds === 0) {
+          if (minutes === 0) {
+            clearInterval(timer);
+            isRunning = false;
+            alert("Time's up!");
+            return;
+          } else {
+            minutes--;
+            seconds = 59;
+          }
+        } else {
+          seconds--;
+        }
+        updateTimer();
+      }, 1000);
+      isRunning = true;
+    }
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    minutes = 25;
+    seconds = 0;
+    isRunning = false;
+    updateTimer();
+  }
+
+  startButton.addEventListener("click", startTimer);
+  resetButton.addEventListener("click", resetTimer);
+};

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign-Up</title>
+	
+	<style type="text/css">
+		h1
+		{
+			color: black;
+			font-family:'Ubuntu', sans-serif;
+			
+		}
+		body
+		{
+			background-image:url(https://img.freepik.com/free-photo/top-view-books-with-copy-space_23-2148827187.jpg?w=900&t=st=1684579345~exp=1684579945~hmac=11193283b081ff160ad96fe62c4e35143bb2dec9db7a368665867b6298b6131c);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		
+		label,button,p
+		{
+		
+			font-family: 'Ubuntu', sans-serif;
+			
+		}
+		button
+		{
+			
+			
+			font-weight: bold;
+			padding-top: 10px;
+			padding-left: 40px;
+			padding-bottom: 10px;
+			padding-right: 40px;
+			background-color: darkblue;
+			color: white;
+			border-radius: 25px;
+			border: none; 
+			border-right-style: solid;  
+			border-bottom-style: solid;
+			border-bottom-color: black;
+			border-right-color: black;
+			         
+		
+		}
+		p
+		{
+	        
+			font-weight: lighter;
+		}
+		input
+		{
+			border-radius: 4px;
+			border-width: 1px;
+			height: 30px;
+			width: 250px;
+			align-items: center;
+		}
+		button:hover
+		{
+			background-color:#0047AB ;
+		}
+		
+		
+	</style>
+	<script>
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
+   
+  </script>
+</head>
+<body>
+	<form name="form" id="form1" action="SignUp.php" method="post" ></br></br></br></br>
+	<center><h1>Register with us!!</h1>
+		<table>
+			<tr>
+				<td>
+		
+			<label>First Name </br><input type="text" name="fname" id="fname"  required></label></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+	
+			<label>Last Name </br><input type="text" name="lname" id="lname" required></label></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		
+			<label>Contact </br><input type="tel" name="phone" id="phone"></label></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Email </br><input type="email" name="email" required></label></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+	
+			<label>Password </br><input type="password" name="password1" required></label></br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label>Confirm Password </br><input type="password" name="password2" required></label></br></br>
+		</td>
+	</tr>
+</table>
+		
+			<button type="submit" form="form1">Sign Up</button></br></br>
+			<center><p>Already have an account?</p></center></br>
+			<button  onclick="goToLogin()">Login</button>
+	
+		</center>
+	</form>
+
+</body>
+</html>

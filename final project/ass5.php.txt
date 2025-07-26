@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment Form</title>
+    <link rel="stylesheet" type="text/css" href="subsel.css">
+    <script>
+	function message()
+{
+	const response = "Do you want to add another subject/assignment?";
+        if(confirm(response))
+{
+	window.location.href="subsel.html";
+}
+	else{
+	alert('your checklist is ready!!');
+}
+}
+</script>
+</head>
+<body>
+    <center>
+        <form method="post" action="ass2.php">
+            <?php
+            session_start();
+            
+            if (isset($_SESSION['subjects']) && isset($_SESSION['subject_ids'])) {
+                $subjects = $_SESSION['subjects'];
+                $subjectIds = $_SESSION['subject_ids'];
+    
+    
+         echo '<h3>Assignments for ' . htmlspecialchars($subjects) . '</h3>';
+
+
+                    echo '<label>Assignment:</label><br>
+                          <input type="text" name="subject_assignments" id="assignment" placeholder="enter assignment" required><br><br>';
+                    echo '<label>Enter Deadline:</label><br>
+                          <input type="date" name="deadlines" id="deadline" required><br><br>';
+		    echo '<button type="submit" name="next" value="Next" onclick="message()"></button>';
+            
+                
+  
+                $_SESSION['subject_ids'] = $subjectIds;
+    
+            } else {
+                echo "No subjects were provided. Please go back.";
+            }
+            ?>
+        </form>
+    </center>
+
+   
+</body>
+</html>

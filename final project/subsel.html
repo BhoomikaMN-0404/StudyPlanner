@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject Selection</title>
+    <link rel="stylesheet" type="text/css" href="subsel.css">
+    <script>
+        function toggleSelection() {
+            var select = document.getElementById("subjects");
+            var textarea = document.getElementById("custom_subjects");
+
+            if (select.value !== "") {
+                textarea.disabled = true;
+            } else {
+                textarea.disabled = false;
+            }
+        }
+
+        function toggleTextArea() {
+            var select = document.getElementById("subjects");
+            var textarea = document.getElementById("custom_subjects");
+
+            if (textarea.value !== "") {
+                select.disabled = true;
+            } else {
+                select.disabled = false;
+            }
+        }
+    </script>
+</head>
+<body><center>
+    <form method="post" action="subsel.php">
+        <label><h4>Select the subjects you want to add</h4></label><br>
+        <select id="subjects" name="subject" multiple onchange="toggleSelection()">
+            <option value="mathematics">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="Computer Science">Computer Science</option>
+        <option value="Biology">Biology</option>
+        <option value="Botany">Botany</option>
+           <option value="zoology">Zoology</option>
+        <option value="biotechnology">Biotechnology</option>
+         <option value="Chemistry">Chemistry</option>
+         <option value="Statistics">Statistics</option>
+             <option value="Economics">Economics</option>
+             <option value="Business">Business</option>
+         <option value="History">History</option>
+             <option value="Psychology">Psychology</option>
+         <option value="Kannada">Kannada</option>
+         <option value="English">English</option>
+             <option value="Hindi">Hindi</option>
+        </select><br /><br />
+        <h4>Type the subject if not present</h4>
+        <textarea id="custom_subjects" name="custom_subjects" placeholder="Type custom subjects, each on a new line" style="width: 400px;height:100px" oninput="toggleTextArea()"></textarea><br>
+        <button type="submit" style="font-weight: bold;">Next</button>
+    </form></center>
+</body>
+</html>

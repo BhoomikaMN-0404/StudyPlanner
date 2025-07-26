@@ -1,0 +1,23 @@
+/* checklist.css */
+.checklist {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checklist li {
+  margin-bottom: 10px;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+}
+
+.checklist input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checklist .deadline {
+  margin-left: 10px;
+  color: #999;
+}
